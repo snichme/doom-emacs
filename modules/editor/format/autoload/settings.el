@@ -80,11 +80,11 @@
     (cl-destructuring-bind (m &optional probe)
         (doom-enlist mode)
       (if unset
-          (puthash m (assq-delete-all name (gethash key format-all-mode-table))
-                   format-all-mode-table)
+          (puthash m (assq-delete-all name (gethash key format-all-language-table))
+                   format-all-language-table)
         (format-all--pushhash
          m (cons name (if probe `(lambda () ,probe)))
-         format-all--mode-table)))))
+         format-all--language-table)))))
 
 ;;;###autodef
 (cl-defun set-formatter!
